@@ -28,5 +28,4 @@ Even though `password` is marked private, we can read the raw data from Slot 1 u
 
 - Never store sensitive data (passwords, API keys, user privacy data) on-chain in plain text. private variables are not secret.
 - If you must verify a secret on-chain, store a hash of the secret (e.g., keccak256(password)) and verify the hash of the user's input.
-- Please refer to `./VaultSolution.sol` for the proper password implementation
-
+- Please refer to `./VaultSolution.sol` for the proper password implementation.

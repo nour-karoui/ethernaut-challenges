@@ -1,17 +1,25 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract UltimateKing {
-    address public kingContract;
-    bool public receivedMoney;
+contract King {
+    address king;
+    uint256 public prize;
+    address public owner;
 
-    constructor(address _kingContract) {
-        kingContract = _kingContract;
-        receivedMoney = false;
+    constructor() payable {
+        owner = msg.sender;
+        king = msg.sender;
+        prize = msg.value;
     }
 
-    function sendFunds() external payable {
-        (bool success,) = payable(kingContract).call{value: msg.value}("");
-        require(success, "Failed to send");
+    receive() external payable {
+        require(msg.value >= prize || msg.sender == owner);
+        payable(king).transfer(msg.value);
+        king = msg.sender;
+        prize = msg.value;
+    }
+
+    function _king() public view returns (address) {
+        return king;
     }
 }
