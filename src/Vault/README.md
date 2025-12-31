@@ -22,8 +22,6 @@ Even though `password` is marked private, we can read the raw data from Slot 1 u
    ```bash
    cast storage <CONTRACT_ADDRESS> 1
 
-
-
 ## How to Avoid
 
 - Never store sensitive data (passwords, API keys, user privacy data) on-chain in plain text. private variables are not secret.
