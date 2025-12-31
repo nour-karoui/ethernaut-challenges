@@ -37,7 +37,7 @@ forge script script/CoinFlip.s.sol:CoinFlipScript --rpc-url $RPC_URL
 
 ## How to Avoid
 
-In order to avoid this, we can rely on Chainlink's VRF (Verifiable Random Functions), Feel free to read it more thoroughly in these docs: https://docs.chain.link/vrf
+In order to avoid this, we can rely on Chainlink's VRF (Verifiable Random Functions), Feel free to read it more thoroughly in these docs: [Chainlink VRF](https://docs.chain.link/vrf)
 Chainlink provides a contract that interacts with oracles in order to generate a random number.
 
 Please check `./CoinFlipSolution.sol` for a basic implementation of the coinFlip game with right randomness generation
