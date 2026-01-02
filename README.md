@@ -1,66 +1,18 @@
-## Foundry
+# Ethernaut Challenges Solutions
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository contains comprehensive solutions, detailed explanations, and security fixes for the [Ethernaut](https://ethernaut.openzeppelin.com/) challenges.
 
-Foundry consists of:
+## Purpose
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The goal of this repository is not just to solve the levels, but to understand the underlying vulnerabilities. For each challenge located in the `src/` directory, you will find:
 
-## Documentation
+1.  **Analysis**: A `README.md` explaining the vulnerability, the objective, and the solution.
+2.  **The Code**: The original challenge contract.
+3.  **The Exploit**: A contract (`*Attack.sol`) or script used to hack the level.
+4.  **The Fix**: A secure implementation (`*Solution.sol`) demonstrating how to avoid the vulnerability in production.
 
-https://book.getfoundry.sh/
+## Tools Used
 
-## Usage
+This project exploits and solves challenges using **Foundry**.
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- **Cast**: Used for interacting with the chain, sending transactions, and inspecting storage slots (crucial for reading `private` variables).
