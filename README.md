@@ -16,3 +16,6 @@ The goal of this repository is not just to solve the levels, but to understand t
 This project exploits and solves challenges using **Foundry**.
 
 - **Cast**: Used for interacting with the chain, sending transactions, and inspecting storage slots (crucial for reading `private` variables).
+
+// TODO: talk about cas tand cast command
+// TODO: explain the difference betwen verified and unverified contract
